@@ -1,0 +1,38 @@
+# Python virtual environment
+venv/
+.venv/
+env/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environment files
+.env
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+
+# Large binary files
+*.dylib
+*.so
+*.dll
+
+# Specific large library directories to ignore
+venv/lib/python3.10/site-packages/torch/
+venv/lib/python3.10/site-packages/tensorflow/
+venv/lib/python3.10/site-packages/clang/
