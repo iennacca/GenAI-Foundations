@@ -21,7 +21,7 @@
 	// "postCreateCommand": "",
 
 	// Use 'postStartCommand' to run commands every time the container is started.
-	"postStartCommand": "ollama serve"   
+	"postStartCommand": "bash /workspaces/GenAI-Foundations/.devcontainer/start.sh"   
 
 	// Configure tool-specific properties.
 	// "customizations": {},
