@@ -36,3 +36,5 @@ build/
 venv/lib/python3.10/site-packages/torch/
 venv/lib/python3.10/site-packages/tensorflow/
 venv/lib/python3.10/site-packages/clang/
+docs/youtube/transcript.txt
+docs/chroma/
