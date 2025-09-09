@@ -8,7 +8,8 @@
 	},
 	"features": {
 		"ghcr.io/prulloac/devcontainer-features/ollama:1": {},
-		"ghcr.io/devcontainers-extra/features/ffmpeg-apt-get:1": {}
+		"ghcr.io/devcontainers-extra/features/ffmpeg-apt-get:1": {},
+		"ghcr.io/devcontainers/features/nvidia-cuda:1": {}
 	},
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
@@ -21,11 +22,30 @@
 	// "postCreateCommand": "",
 
 	// Use 'postStartCommand' to run commands every time the container is started.
-	"postStartCommand": "bash /workspaces/GenAI-Foundations/.devcontainer/start.sh"   
+    "postStartCommand": "bash /workspaces/GenAI-Foundations/.devcontainer/start.sh && (nvidia-smi || echo 'nvidia-smi not available in container')",
 
 	// Configure tool-specific properties.
 	// "customizations": {},
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
+
+	// Allow gpu access to devcontainer
+	"hostRequirements": {
+		"cpus": 4,
+		"memory": "8gb",
+		"storage": "16gb",
+		"gpu": true
+	},
+
+
+    "containerEnv": {
+        "NVIDIA_VISIBLE_DEVICES": "all",
+        "NVIDIA_DRIVER_CAPABILITIES": "compute,utility,video"
+    },
+
+	"runArgs": [
+		"--gpus",
+		"all"
+	]
 }
